@@ -27,7 +27,7 @@ const Home: React.FC = () => {
     <div>
       <h1>PowerPoint Text Extractor</h1>
       <FileUploader onFileUpload={handleFileUpload} />
-      {textData && <TextDisplay textData={textData} />}
+      {textData && <TextDisplay textData={textData} onCardPress={() => { }} />}
     </div>
   );
 };
