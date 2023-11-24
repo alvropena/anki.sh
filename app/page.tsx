@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       formData.append('file', file);
 
       // Corrected endpoint to match FastAPI
-      const response = await axios.post('http://127.0.0.1:8000/api/extract/', formData);
+      const response = await axios.post('https://sabio-4f2f00bf86a7.herokuapp.com/api/extract/', formData);
 
       console.log('Response Data:', response.data); // Log the response data
 
