@@ -3,9 +3,7 @@ import { useState } from 'react';
 import FileUploader from '../components/file-uploader';
 import TextDisplay from '../components/text-display';
 import axios from 'axios';
-import Link from 'next/link';
-
-import { Button } from '@/components/ui/button';
+import { NewDeck } from '@/components/new-deck';
 
 const Home: React.FC = () => {
   const [textData, setTextData] = useState<{ slideNumber: number; text: string }[] | null>(null);
@@ -29,9 +27,8 @@ const Home: React.FC = () => {
   return (
     <div>
       <h1 className='text-xl'>Welcome back, Alvaro!</h1>
-      <Link href={'/add'}>
-        <Button>Add</Button>
-      </Link>
+      <NewDeck />
+
       {/* <FileUploader onFileUpload={handleFileUpload} />
       {textData && <TextDisplay textData={textData} onCardPress={() => { }} />} */}
     </div>

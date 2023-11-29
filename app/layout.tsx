@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { UserNav } from '@/components/user-nav';
-import { AlignLeft, Bell } from 'lucide-react';
+import { AlignLeft, Bell, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import Search from '@/components/search';
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className='flex justify-between m-4'>
+        <nav className='flex justify-between items-center m-4'>
           {/* <Link href={'/'}>
             <AlignLeft />
           </Link> */}
@@ -34,6 +34,9 @@ export default function RootLayout({
           </div>
           <div className='flex items-center gap-4'>
             <Search />
+            <button>
+              <HelpCircle />
+            </button>
             <button>
               <Bell />
             </button>
