@@ -3,6 +3,9 @@ import { useState } from 'react';
 import FileUploader from '../components/file-uploader';
 import TextDisplay from '../components/text-display';
 import axios from 'axios';
+import Link from 'next/link';
+
+import { Button } from '@/components/ui/button';
 
 const Home: React.FC = () => {
   const [textData, setTextData] = useState<{ slideNumber: number; text: string }[] | null>(null);
@@ -13,7 +16,7 @@ const Home: React.FC = () => {
       formData.append('file', file);
 
       // Corrected endpoint to match FastAPI
-      const response = await axios.post('https://sabio-4f2f00bf86a7.herokuapp.com/api/extract/', formData);
+      const response = await axios.post('http://127.0.0.1:8000/api/extract/', formData);
 
       console.log('Response Data:', response.data); // Log the response data
 
@@ -25,9 +28,12 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>PowerPoint Text Extractor</h1>
-      <FileUploader onFileUpload={handleFileUpload} />
-      {textData && <TextDisplay textData={textData} onCardPress={() => { }} />}
+      <h1 className='text-xl'>Welcome back, Alvaro!</h1>
+      <Link href={'/add'}>
+        <Button>Add</Button>
+      </Link>
+      {/* <FileUploader onFileUpload={handleFileUpload} />
+      {textData && <TextDisplay textData={textData} onCardPress={() => { }} />} */}
     </div>
   );
 };
