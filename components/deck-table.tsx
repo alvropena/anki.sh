@@ -53,7 +53,7 @@ export function TableDemo() {
                         <TableCell className="text-right">{deck.due}</TableCell>
                         <TableCell className="text-right">
                             <button>
-                            <Settings size={18} />
+                                <Settings size={18} />
                             </button>
                         </TableCell>
                     </TableRow>
