@@ -14,6 +14,7 @@ import {
     MenubarTrigger,
 } from "@/components/ui/menubar"
 import Link from "next/link"
+import { AddCard } from "./add-card"
 
 export function MenubarDemo() {
     return (
@@ -24,9 +25,9 @@ export function MenubarDemo() {
                 </Link>
             </MenubarMenu>
             <MenubarMenu>
-                <Link href={'/add'}>
-                    <MenubarTrigger>Add</MenubarTrigger>
-                </Link>
+                <MenubarTrigger>
+                    <AddCard />
+                </MenubarTrigger>
             </MenubarMenu>
             <MenubarMenu>
                 <Link href={'/browse'}>
@@ -41,7 +42,7 @@ export function MenubarDemo() {
             <MenubarMenu>
 
                 <MenubarTrigger>
-                    
+
                     Sync
 
                 </MenubarTrigger>
