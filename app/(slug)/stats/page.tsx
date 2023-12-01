@@ -3,6 +3,16 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import TodayCard from '@/components/stats/today-card'
+import FutureDueCard from '@/components/stats/future-due-card'
+import CalendarCard from '@/components/stats/calendar-card'
+import ReviewCard from '@/components/stats/review-card'
+import CardCountsCard from '@/components/stats/card-counts-card'
+import ReviewIntervalsCard from '@/components/stats/review-intervals-card'
+import CardEaseCard from '@/components/stats/card-ease-card'
+import HourlyBreakdownCard from '@/components/stats/hourly-breakdown-card'
+import AnswerButtonsCard from '@/components/stats/answer-button-card'
+import AddedCard from '@/components/stats/added-card'
 
 function RadioGroupDemo() {
   return (
@@ -48,9 +58,39 @@ function Stats() {
         <RadioGroupDemo />
         <RadioGroupTwo />
       </div>
-      <div>
-        Stats
-      </div>
+      <div className="grid grid-cols-3 gap-4">
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <TodayCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <FutureDueCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <CalendarCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <ReviewCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <CardCountsCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <ReviewIntervalsCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <CardEaseCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <HourlyBreakdownCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <AnswerButtonsCard />
+  </div>
+  <div className="col-span-3 md:col-span-2 lg:col-span-1">
+    <AddedCard />
+  </div>
+</div>
+
       <div className='flex flex-row items-center justify-between mx-4'>
         <div className='flex gap-4 items-center'>
           <Label>Deck</Label>

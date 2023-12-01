@@ -56,14 +56,17 @@ export function AddCard() {
                     </div>
                 </div>
                 <DialogFooter>
-                    <div className='flex flex-row justify-between mt-4'>
-                        <div className='flex flex-row gap-4'>
+                    <div className='flex flex-row justify-between items-center'>
+                        <div className='flex gap-4'>
                             <Button type="reset" variant={"outline"}>Help</Button>
                             <Button type="submit" variant={"outline"}>Add</Button>
                             <Button type="submit" variant={"outline"}>History</Button>
                         </div>
-                        <Button type="submit" variant={"outline"}>Close</Button>
+                        <div>
+                            <Button type="submit" variant={"outline"}>Close</Button>
+                        </div>
                     </div>
+
                 </DialogFooter>
             </DialogContent>
         </Dialog>

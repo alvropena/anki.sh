@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -10,6 +12,13 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 export function CreateDeck() {
     return (
@@ -30,6 +39,20 @@ export function CreateDeck() {
                             New deck name
                         </Label>
                         <Input id="deck-name" value="" className="col-span-3" />
+                    </div>
+                    <div className="flex flex-col space-y-1.5">
+                        <Label htmlFor="framework">Hierarchy</Label>
+                        <Select>
+                            <SelectTrigger id="framework">
+                                <SelectValue placeholder="Select" />
+                            </SelectTrigger>
+                            <SelectContent position="popper">
+                                <SelectItem value="next">Next.js</SelectItem>
+                                <SelectItem value="sveltekit">SvelteKit</SelectItem>
+                                <SelectItem value="astro">Astro</SelectItem>
+                                <SelectItem value="nuxt">Nuxt.js</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
                 </div>
                 <DialogFooter>
