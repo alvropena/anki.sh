@@ -8,6 +8,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { Settings } from "lucide-react"
 
 const decks = [
     {
@@ -40,6 +41,7 @@ export function TableDemo() {
                     <TableHead>New</TableHead>
                     <TableHead>Learn</TableHead>
                     <TableHead>Due</TableHead>
+                    <TableHead></TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -49,6 +51,9 @@ export function TableDemo() {
                         <TableCell>{deck.new}</TableCell>
                         <TableCell>{deck.learn}</TableCell>
                         <TableCell className="text-right">{deck.due}</TableCell>
+                        <TableCell className="text-right">
+                            <Settings size={18} />
+                        </TableCell>
                     </TableRow>
                 ))}
             </TableBody>

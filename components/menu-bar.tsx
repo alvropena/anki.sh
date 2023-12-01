@@ -1,20 +1,25 @@
 import {
     Menubar,
-    MenubarCheckboxItem,
-    MenubarContent,
-    MenubarItem,
     MenubarMenu,
-    MenubarRadioGroup,
-    MenubarRadioItem,
-    MenubarSeparator,
-    MenubarShortcut,
-    MenubarSub,
-    MenubarSubContent,
-    MenubarSubTrigger,
     MenubarTrigger,
 } from "@/components/ui/menubar"
 import Link from "next/link"
-import { AddCard } from "./add-card"
+import { AddCard } from "@/components/add-card"
+import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+} from "@/components/ui/avatar"
+
+function AvatarDemo() {
+    return (
+        <Avatar>
+            <AvatarImage src="https://github.com/alvropena.png" alt="@alvropena" />
+            <AvatarFallback>AP</AvatarFallback>
+        </Avatar>
+    )
+}
+
 
 export function MenubarDemo() {
     return (
@@ -35,18 +40,14 @@ export function MenubarDemo() {
                 </Link>
             </MenubarMenu>
             <MenubarMenu>
-                <Link href={'/browse'}>
+                <Link href={'/stats'}>
                     <MenubarTrigger>Stats</MenubarTrigger>
                 </Link>
             </MenubarMenu>
             <MenubarMenu>
-
                 <MenubarTrigger>
-
                     Sync
-
                 </MenubarTrigger>
-
             </MenubarMenu>
         </Menubar>
     )

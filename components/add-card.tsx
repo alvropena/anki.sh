@@ -29,39 +29,33 @@ export function AddCard() {
                 <DialogHeader>
                     <DialogTitle>Add new card</DialogTitle>
                     <DialogDescription>
-                        Create a new deck. Click save when you`&apos;`re done.
+                        Create a new card. Click save when you&apos;re done.
                     </DialogDescription>
                 </DialogHeader>
-                <div className="grid gap-4 py-4">
-                    <div className="items-center ">
-                        <Label htmlFor="deck-name">
-                            New deck name
-                        </Label>
-                        <Input id="deck-name" value="" className="col-span-3" />
+
+                <div>
+                    <div className="flex flex-row items-center">
+                        <Label>Type</Label>
+                        <Button variant={'outline'}>Basic</Button>
+                        <Label>Deck</Label>
+                        <Button variant={'outline'}>Economics</Button>
+                    </div>
+                    <div className="mb-4">
+                        <Label>Front</Label>
+                        <TextareaFront />
+                    </div>
+
+                    <div className="mb-4">
+                        <Label className='mb-4'>Back</Label>
+                        <TextareaBack />
+                    </div>
+
+                    <div>
+                        <Label htmlFor='tags'>Tags</Label>
+                        <Input id="tags" value="" className="col-span-3" />
                     </div>
                 </div>
                 <DialogFooter>
-                    <Label>Type</Label>
-                    <div>
-                        <Button>Basic</Button>
-
-                        <Label>Deck</Label>
-                        <Button>Economics</Button>
-                        <div className="mb-4">
-                            <Label>Front</Label>
-                            <TextareaFront />
-                        </div>
-
-                        <div className="mb-4">
-                            <Label className='mb-4'>Back</Label>
-                            <TextareaBack />
-                        </div>
-
-                        <div>
-                            <Label htmlFor='tags'>Tags</Label>
-                            <Input id="tags" value="" className="col-span-3" />
-                        </div>
-                    </div>
                     <div className='flex flex-row justify-between mt-4'>
                         <div className='flex flex-row gap-4'>
                             <Button type="reset" variant={"outline"}>Help</Button>
