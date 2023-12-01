@@ -21,7 +21,7 @@ export function CreateDeck() {
                 <DialogHeader>
                     <DialogTitle>Create a new deck</DialogTitle>
                     <DialogDescription>
-                        Create a new deck. Click save when you're done.
+                        Create a new deck. Click save when you`&apos;`re done.
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
