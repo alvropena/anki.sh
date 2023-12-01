@@ -1,6 +1,21 @@
 import React from 'react'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Label } from '@/components/ui/label'
+import { Checkbox } from "@/components/ui/checkbox"
+
+function CheckboxDemo() {
+    return (
+        <div className="flex items-center space-x-2">
+            <Checkbox id="terms" />
+            <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+                Time
+            </label>
+        </div>
+    )
+}
 
 function RadioGroupDemo() {
     return (
@@ -27,6 +42,7 @@ export default function ReviewCard() {
             <h1 className='text-2xl'>Reviews</h1>
             <div>
                 <p>The number of questions you have answered.</p>
+                <CheckboxDemo />
                 <RadioGroupDemo />
             </div>
             <div>
