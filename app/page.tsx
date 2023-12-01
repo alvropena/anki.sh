@@ -3,7 +3,8 @@ import { useState } from 'react';
 import FileUploader from '../components/file-uploader';
 import TextDisplay from '../components/text-display';
 import axios from 'axios';
-import { NewDeck } from '@/components/new-deck';
+import { TableDemo } from '@/components/deck-table';
+import Footer from '@/components/footer';
 
 const Home: React.FC = () => {
   const [textData, setTextData] = useState<{ slideNumber: number; text: string }[] | null>(null);
@@ -26,11 +27,10 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1 className='text-xl'>Welcome back, Alvaro!</h1>
-      <NewDeck />
-
-      {/* <FileUploader onFileUpload={handleFileUpload} />
-      {textData && <TextDisplay textData={textData} onCardPress={() => { }} />} */}
+      <TableDemo />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -1,6 +1,17 @@
 "use client"
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+
+function TextareaFront() {
+  return <Textarea placeholder="" />
+}
+function TextareaBack() {
+  return <Textarea placeholder=""/>
+}
+
 
 function AddCard() {
   const [frontContent, setFrontContent] = useState('');
@@ -13,29 +24,42 @@ function AddCard() {
 
   return (
     <div className="p-6 shadow-md rounded-md">
+      <Label>Type</Label>
+      <Button>Basic</Button>
+      
+      <Label>Deck</Label>
+      <Button>Economics</Button>
       <div className="mb-4">
-        <label className="block text-sm font-semibold text-gray-600">Front</label>
-        <textarea
-          className="w-full h-24 p-2 border border-gray-300 rounded-md"
-          placeholder="Enter front content here"
-          value={frontContent}
-          onChange={(e) => setFrontContent(e.target.value)}
-        />
+        <Label>Front</Label>
+        <TextareaFront />
       </div>
 
       <div className="mb-4">
-        <label className="block text-sm font-semibold text-gray-600">Back</label>
-        <textarea
-          className="w-full h-24 p-2 border border-gray-300 rounded-md"
-          placeholder="Enter back content here"
-          value={backContent}
-          onChange={(e) => setBackContent(e.target.value)}
-        />
+        <Label className='mb-4'>Back</Label>
+        <TextareaBack />
       </div>
 
-      <Button onClick={handleSave}>
-        Save
-      </Button>
+      <div>
+        <Label htmlFor='tags'>Tags</Label>
+        <Input id="tags" value="" className="col-span-3" />
+      </div>
+
+      <div className='flex flex-row justify-between mt-4'>
+        <div className='flex flex-row gap-4'>
+          <Button variant={'outline'}>
+            Help
+          </Button>
+          <Button variant={'outline'}>
+            Add
+          </Button>
+          <Button variant={'outline'}>
+            History
+          </Button>
+        </div>
+        <Button onClick={handleSave} variant={'outline'}>
+          Close
+        </Button>
+      </div>
     </div>
   );
 }

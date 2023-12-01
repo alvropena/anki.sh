@@ -11,35 +11,30 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export function NewDeck() {
+export function CreateDeck() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline">New deck</Button>
+                <Button variant="outline">Create Deck</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
                     <DialogTitle>Create a new deck</DialogTitle>
                     <DialogDescription>
-                        Create a new deck to study later.
+                        Create a new deck. Click save when you're done.
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="name" className="text-right">
-                            Name
+                    <div className="items-center ">
+                        <Label htmlFor="deck-name">
+                            New deck name
                         </Label>
-                        <Input id="name" value="" className="col-span-3" />
-                    </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="username" className="text-right">
-                            Label
-                        </Label>
-                        <Input id="username" value="@peduarte" className="col-span-3" />
+                        <Input id="deck-name" value="" className="col-span-3" />
                     </div>
                 </div>
                 <DialogFooter>
-                    <Button type="submit">Save changes</Button>
+                    <Button type="reset" variant={"outline"}>Cancel</Button>
+                    <Button type="submit">Save</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

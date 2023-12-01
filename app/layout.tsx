@@ -4,6 +4,8 @@ import { UserNav } from '@/components/user-nav';
 import { AlignLeft, Bell, HelpCircle } from 'lucide-react';
 import Link from 'next/link';
 import Search from '@/components/search';
+import { MenubarDemo } from '@/components/menu-bar';
+import Footer from '@/components/footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,30 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className='flex justify-between items-center m-4'>
-          {/* <Link href={'/'}>
-            <AlignLeft />
-          </Link> */}
-          <div className='flex gap-4'>
-            <Link href={'/'}>
-              Decks
-            </Link>
-            <Link href={"/analytics"}>
-              Analytics
-            </Link>
-          </div>
-          <div className='flex items-center gap-4'>
-            <Search />
-            <button>
-              <HelpCircle />
-            </button>
-            <button>
-              <Bell />
-            </button>
-            <UserNav />
-          </div>
-        </nav>
-        {children}</body>
+        <div className='flex justify-center items-center mt-4'>
+          <MenubarDemo />
+        </div>
+        {children}
+      </body>
     </html>
   )
 }
