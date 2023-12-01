@@ -25,8 +25,8 @@ function HourlyBreakdownCard() {
     return (
         <div>
             <h1 className='text-2xl'>Hourly Breakdown</h1>
-            <div>
-                <p>Review success rate for each hour of the day.</p>
+            <div className='flex flex-col items-center gap-2'>
+                <p className='mt-2'>Review success rate for each hour of the day.</p>
                 <RadioGroupDemo />
             </div>
         </div>

@@ -28,10 +28,10 @@ function RadioGroupDemo() {
 
 export default function ReviewIntervalsCard() {
     return (
-        <div>
+        <div className='bg-gray-100'>
             <h1 className='text-2xl'>Review Intervals</h1>
-            <div>
-                <p>Delays until reviews are shown again.</p>
+            <div className='flex flex-col items-center gap-2'>
+                <p className='mt-2'>Delays until reviews are shown again.</p>
                 <RadioGroupDemo />
             </div>
         </div>

@@ -7,9 +7,13 @@ function CalendarCard() {
         <div>
             <h1 className='text-2xl'>Calendar</h1>
             <div className='flex flex-row items-center justify-center gap-2'>
-                <ChevronLeftCircle size={18} />
+                <button>
+                    <ChevronLeftCircle size={18} />
+                </button>
                 <p>2023</p>
-                <ChevronRightCircle size={18} />
+                <button>
+                    <ChevronRightCircle size={18} />
+                </button>
             </div>
         </div>
     )

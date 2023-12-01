@@ -40,16 +40,14 @@ export default function ReviewCard() {
     return (
         <div>
             <h1 className='text-2xl'>Reviews</h1>
-            <div>
-                <p>The number of questions you have answered.</p>
-                <CheckboxDemo />
-                <RadioGroupDemo />
-            </div>
-            <div>
+            <div className='flex flex-col items-center gap-2'>
+                <p className='mt-2'>The number of questions you have answered.</p>
+                <div className='flex flex-row gap-2'>
+                    <CheckboxDemo />
+                    <RadioGroupDemo />
+                </div>
                 <p>Graph</p>
-            </div>
-            <div>
-                <p>Days studied: 1 of 31 3%</p>
+                <p>Days studied: 1 of 31 (3%)</p>
                 <p>Total: 3 reviews</p>
                 <p>Average for days studied: 3 reviews/day</p>
                 <p>Average over period: 0 reviews/day</p>

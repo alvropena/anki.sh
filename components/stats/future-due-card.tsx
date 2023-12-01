@@ -29,15 +29,11 @@ function RadioGroupDemo() {
 function FutureDueCard() {
     return (
         <div>
-            <div>
-                <h1 className='text-2xl'>Future Due</h1>
-                <p>The number of reviews due in the future</p>
+            <h1 className='text-2xl'>Future Due</h1>
+            <div className='flex flex-col items-center gap-2'>
+                <p className='mt-2'>The number of reviews due in the future</p>
                 <RadioGroupDemo />
-            </div>
-            <div>
                 <p>Graph</p>
-            </div>
-            <div>
                 <p>Total: 3 reviews</p>
                 <p>Average: 0 reviews/day</p>
                 <p>Due tomorrow: 0 reviews</p>

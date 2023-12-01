@@ -26,8 +26,8 @@ function AnswerButtonsCard() {
     return (
         <div>
             <h1 className='text-2xl'>Answer Buttons</h1>
-            <div>
-                <p>The number of times you have pressed each button.</p>
+            <div className='flex flex-col items-center gap-2'>
+                <p className='mt-2'>The number of times you have pressed each button.</p>
                 <RadioGroupDemo />
             </div>
         </div>

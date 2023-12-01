@@ -28,9 +28,9 @@ export function RadioGroupDemo() {
 
 function AddedCard() {
     return (
-        <div>
-            <h1 className='text-2xl'>Added</h1>
-            <div>
+        <div className='m-4 bg-gray-200'>
+            <h1 className='text-2xl p-2'>Added</h1>
+            <div className='flex flex-col items-center gap-2'>
                 <p>The number of new cards you have added.</p>
                 <RadioGroupDemo />
             </div>
