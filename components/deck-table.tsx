@@ -8,7 +8,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { Settings } from "lucide-react"
+import { SettingsDropdown } from "./settings-dropdown"
 
 const decks = [
     {
@@ -53,7 +53,7 @@ export function TableDemo() {
                         <TableCell className="text-right">{deck.due}</TableCell>
                         <TableCell className="text-right">
                             <button>
-                                <Settings size={18} />
+                                <SettingsDropdown />
                             </button>
                         </TableCell>
                     </TableRow>

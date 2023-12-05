@@ -5,11 +5,13 @@ import {
 } from "@/components/ui/menubar"
 import Link from "next/link"
 import { AddCard } from "@/components/add-card"
+import { SyncDialog } from "@/components/sync-dialog"
 import {
     Avatar,
     AvatarFallback,
     AvatarImage,
 } from "@/components/ui/avatar"
+
 
 function AvatarDemo() {
     return (
@@ -46,7 +48,7 @@ export function MenubarDemo() {
             </MenubarMenu>
             <MenubarMenu>
                 <MenubarTrigger>
-                    Sync
+                    <SyncDialog />
                 </MenubarTrigger>
             </MenubarMenu>
         </Menubar>
