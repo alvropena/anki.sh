@@ -9,6 +9,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { SettingsDropdown } from "./settings-dropdown"
+import { Plus } from "lucide-react"
 
 const decks = [
     {
@@ -37,6 +38,7 @@ export function TableDemo() {
             <TableCaption>Studied 0 cards in 0 seconds today (0s/card).</TableCaption>
             <TableHeader>
                 <TableRow>
+                    <TableHead></TableHead>
                     <TableHead>Deck</TableHead>
                     <TableHead>New</TableHead>
                     <TableHead>Learn</TableHead>
@@ -47,6 +49,11 @@ export function TableDemo() {
             <TableBody>
                 {decks.map((deck) => (
                     <TableRow key={deck.deck}>
+                        <TableCell>
+                            <button>
+                                <Plus size={16} strokeWidth={1.5} />
+                            </button>
+                        </TableCell>
                         <TableCell className="font-medium">{deck.deck}</TableCell>
                         <TableCell>{deck.new}</TableCell>
                         <TableCell>{deck.learn}</TableCell>
