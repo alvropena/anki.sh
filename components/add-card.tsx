@@ -23,7 +23,7 @@ export function AddCard() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline">Add</Button>
+                <Button variant="ghost">Add</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>

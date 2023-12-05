@@ -15,7 +15,7 @@ export function SyncDialog() {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline">Sync</Button>
+                <Button variant="ghost">Sync</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
