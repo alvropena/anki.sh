@@ -8,7 +8,7 @@ const MyComponent: React.FC = () => {
 
     // Example: Adding a new card
     const handleAddCard = () => {
-        const newCard: Flashcard = { id: Date.now(), front: 'New Front', back: 'New Back' };
+        const newCard = { id: Date.now(), front: 'New Front', back: 'New Back' };
         addCard(newCard);
     };
 
