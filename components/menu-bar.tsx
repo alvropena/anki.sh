@@ -1,3 +1,5 @@
+"use client"
+
 import {
     Menubar,
     MenubarMenu,
@@ -11,7 +13,6 @@ import {
     AvatarFallback,
     AvatarImage,
 } from "@/components/ui/avatar"
-
 
 function AvatarDemo() {
     return (

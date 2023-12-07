@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Anki',
-  description: 'Learn effectively.',
+  description: 'The modern version of Anki!',
 }
 
 export default function RootLayout({

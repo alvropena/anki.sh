@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -11,15 +12,19 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from '@/components/ui/textarea';
-
-function TextareaFront() {
-    return <Textarea placeholder="" />
-}
-function TextareaBack() {
-    return <Textarea placeholder="" />
-}
+import { useCardStore } from '@/app/context/store'; // Import your store
 
 export function AddCard() {
+    const { addCard } = useCardStore(); // Get the addCard function from your store
+    const [front, setFront] = useState<string>('');
+    const [back, setBack] = useState<string>('');
+
+    const handleAddCard = () => {
+        addCard({ id: Date.now(), front, back });
+        setFront('');
+        setBack('');
+    };
+
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -42,12 +47,12 @@ export function AddCard() {
                     </div>
                     <div className="mb-4">
                         <Label>Front</Label>
-                        <TextareaFront />
+                        <Textarea placeholder="" value={front} onChange={(e) => setFront(e.target.value)} />
                     </div>
 
                     <div className="mb-4">
                         <Label className='mb-4'>Back</Label>
-                        <TextareaBack />
+                        <Textarea placeholder="" value={back} onChange={(e) => setBack(e.target.value)} />
                     </div>
 
                     <div>
@@ -59,14 +64,19 @@ export function AddCard() {
                     <div className='flex flex-row justify-between items-center'>
                         <div className='flex gap-4'>
                             <Button type="reset" variant={"outline"}>Help</Button>
-                            <Button type="submit" variant={"outline"}>Add</Button>
+                            <Button
+                                type="submit"
+                                variant={"outline"}
+                                onClick={handleAddCard}
+                            >
+                                Add
+                            </Button>
                             <Button type="submit" variant={"outline"}>History</Button>
                         </div>
                         <div>
                             <Button type="submit" variant={"outline"}>Close</Button>
                         </div>
                     </div>
-
                 </DialogFooter>
             </DialogContent>
         </Dialog>
