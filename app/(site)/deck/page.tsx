@@ -1,7 +1,8 @@
 import { CustomStudy } from '@/components/custom-study'
 import { DescriptionDeck } from '@/components/description-deck'
 import { OptionsDialog } from '@/components/options-dialog'
-import { StudyNowDialog } from '@/components/study-now-dialog'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import React from 'react'
 
 function Deck() {
@@ -14,7 +15,9 @@ function Deck() {
                     <p>Learning: { }</p>
                     <p>To review: { }</p>
                 </div>
-                <StudyNowDialog />
+                <Link href={'/cards'}>
+                    <Button>Study Now</Button>
+                </Link>
             </div>
             <div className='flex flex-row items-center justify-center gap-4 m-4'>
                 <OptionsDialog />
