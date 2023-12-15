@@ -1,37 +1,50 @@
-"use client"
+import React from 'react'
+import Footer from '@/components/footer'
+import { TableDemo } from '@/components/deck-table'
 
-import { useState } from 'react';
-import axios from 'axios';
-import { TableDemo } from '@/components/deck-table';
-import Footer from '@/components/footer';
+function Page() {
+  return (
+    <div>
+      <TableDemo />
+      <Footer />
+    </div>
+  )
+}
 
-const Home: React.FC = () => {
-    const [textData, setTextData] = useState<{ slideNumber: number; text: string }[] | null>(null);
+export default Page
 
-    const handleFileUpload = async (file: File) => {
-        try {
-            const formData = new FormData();
-            formData.append('file', file);
+// import Image from "next/image";
+// import AuthForm from "@/app/(site)/components/auth-form";
 
-            // Corrected endpoint to match FastAPI
-            const response = await axios.post('http://127.0.0.1:8000/api/extract/', formData);
+// const Auth = () => {
+//     return (
+//         <div
+//             className="
+//         flex 
+//         min-h-full 
+//         flex-col 
+//         justify-center 
+//         py-12 
+//         sm:px-6 
+//         lg:px-8 
+//         bg-gray-100
+//       "
+//         >
+//             <div className="sm:mx-auto sm:w-full sm:max-w-md">
+//                 {/* <Image
+//                     height="48"
+//                     width="48"
+//                     className="mx-auto w-auto"
+//                     src="/images/logo.png"
+//                     alt="Logo"
+//                 /> */}
+//                 <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
+//                     Sign in to your account
+//                 </h2>
+//             </div>
+//             <AuthForm />
+//         </div>
+//     )
+// }
 
-            console.log('Response Data:', response.data); // Log the response data
-
-            setTextData(response.data);
-        } catch (error: any) {
-            console.error(error.message);
-        }
-    };
-
-    return (
-        <div>
-            <TableDemo />
-            <div>
-                <Footer />
-            </div>
-        </div>
-    );
-};
-
-export default Home;
+// export default Auth;

@@ -25,7 +25,7 @@ export function OptionsDialog() {
                     </DialogDescription>
                 </DialogHeader>
                 <div>
-
+                    {/* TODO: To be finished. */}
                 </div>
                 <DialogFooter>
                     <Button type="submit">Save</Button>

@@ -1,5 +1,8 @@
+"use client";
+
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button"
+import { useDeckStore } from '@/app/context/store';
+//shadcn-ui
 import {
     Dialog,
     DialogContent,
@@ -9,20 +12,23 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from '@/components/ui/textarea';
-import { useCardStore } from '@/app/context/store'; // Import your store
 
 export function AddCard() {
-    const { addCard } = useCardStore(); // Get the addCard function from your store
-    const [front, setFront] = useState<string>('');
-    const [back, setBack] = useState<string>('');
+    const { decks, addCardToDeck } = useDeckStore(state => ({ decks: state.decks, addCardToDeck: state.addCardToDeck }));
+    const [selectedDeckId, setSelectedDeckId] = useState(decks.length > 0 ? decks[0].id : null);
+    const [front, setFront] = useState('');
+    const [back, setBack] = useState('');
 
     const handleAddCard = () => {
-        addCard({ id: Date.now(), front, back });
-        setFront('');
-        setBack('');
+        if (selectedDeckId) {
+            addCardToDeck(selectedDeckId, { id: Date.now(), front, back }); // Add card to the selected deck
+            setFront('');
+            setBack('');
+        }
     };
 
     return (
