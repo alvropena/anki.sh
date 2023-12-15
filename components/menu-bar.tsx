@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/menubar"
 import Link from "next/link"
 import { AddCard } from "@/components/add-card"
-import { SyncDialog } from "@/components/sync-dialog"
+import toast from "react-hot-toast"
 import {
     Avatar,
     AvatarFallback,
@@ -25,6 +25,15 @@ function AvatarDemo() {
 
 
 export function MenubarDemo() {
+    const handleSync = () => {
+        const toastId = toast.loading('Syncing...');
+
+        // Artificial delay of 3 seconds
+        setTimeout(() => {
+            toast.success('Sync complete!', { id: toastId });
+        }, 3000);
+    };
+
     return (
         <Menubar>
             <MenubarMenu>
@@ -48,9 +57,7 @@ export function MenubarDemo() {
                 </Link>
             </MenubarMenu>
             <MenubarMenu>
-                <MenubarTrigger>
-                    <SyncDialog />
-                </MenubarTrigger>
+                <MenubarTrigger onClick={handleSync}>Sync</MenubarTrigger>
             </MenubarMenu>
         </Menubar>
     )

@@ -25,7 +25,6 @@ export function AddCard() {
 
     const handleAddCard = () => {
         if (selectedDeckId) {
-            // Add the 'status' field with a default value of 'new'
             addCardToDeck(selectedDeckId, { id: Date.now(), front, back, status: 'new' });
             setFront('');
             setBack('');
