@@ -25,11 +25,13 @@ export function AddCard() {
 
     const handleAddCard = () => {
         if (selectedDeckId) {
-            addCardToDeck(selectedDeckId, { id: Date.now(), front, back }); // Add card to the selected deck
+            // Add the 'status' field with a default value of 'new'
+            addCardToDeck(selectedDeckId, { id: Date.now(), front, back, status: 'new' });
             setFront('');
             setBack('');
         }
     };
+
 
     return (
         <Dialog>
